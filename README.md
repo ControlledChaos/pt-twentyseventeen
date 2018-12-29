@@ -1,3 +1,3 @@
-# PT Twentyseventeen
+# PT Twenty Seventeen
 
 Personal project
