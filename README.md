@@ -1,2 +1,3 @@
-# pt-twentyseventeen
+# PT Twentyseventeen
+
 Personal project
