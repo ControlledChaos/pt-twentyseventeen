@@ -24,7 +24,7 @@
 <body <?php body_class(); ?>>
 <?php get_template_part( 'template-parts/loader' ); ?>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'twentyseventeen' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'pt-twentyseventeen' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
 

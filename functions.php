@@ -4,15 +4,15 @@
  * Styles & Scripts
  */
 
-function truther_twentyseventeen_remove_scripts() {
+function pt_twentyseventeen_remove_scripts() {
     wp_dequeue_style( 'twentyseventeen-colors-dark' );
     wp_deregister_style( 'twentyseventeen-colors-dark' );
     wp_dequeue_script( 'twentyseventeen-global' );
 }
-add_action( 'wp_print_styles', 'truther_twentyseventeen_remove_scripts', 20 );
-add_action( 'wp_print_scripts', 'truther_twentyseventeen_remove_scripts', 100 );
+add_action( 'wp_print_styles', 'pt_twentyseventeen_remove_scripts', 20 );
+add_action( 'wp_print_scripts', 'pt_twentyseventeen_remove_scripts', 100 );
 
-function truther_twentyseventeen_styles() {
+function pt_twentyseventeen_styles() {
 
     $parent_style = 'twentyseventeen-style';
 
@@ -28,29 +28,29 @@ function truther_twentyseventeen_styles() {
 	wp_add_inline_script( 'typekit',   'try{Typekit.load({ async: false });}catch(e){}' );
     wp_enqueue_style( 'truther-adminbar', get_theme_file_uri( '/assets/css/truther-adminbar.css' ) );
 }
-add_action( 'wp_enqueue_scripts', 'truther_twentyseventeen_styles' );
+add_action( 'wp_enqueue_scripts', 'pt_twentyseventeen_styles' );
 add_editor_style( array( 'assets/css/editor-style.css', get_template_directory_uri() ) );
 
-function truther_twentyseventeen_admin_styles() {
+function pt_twentyseventeen_admin_styles() {
     wp_enqueue_style( 'truther-adminbar', get_theme_file_uri( '/assets/css/truther-adminbar.css' ) );
     wp_enqueue_style( 'truther-admin',    get_theme_file_uri( '/assets/css/truther-admin.css' ) );
 }
-add_action( 'admin_enqueue_scripts', 'truther_twentyseventeen_admin_styles' );
+add_action( 'admin_enqueue_scripts', 'pt_twentyseventeen_admin_styles' );
 
-function truther_twentyseventeen_login_stylesheet() {
+function pt_twentyseventeen_login_stylesheet() {
     wp_enqueue_style( 'open-sans',     'https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,600i,700,700i,800', '', null, 'all' );
     wp_enqueue_style( 'bitter',        'https://fonts.googleapis.com/css?family=Bitter:400,700', '', null, 'all' );
     wp_enqueue_script( 'typekit',      'https://use.typekit.net/idi3mnl.js' );
     wp_add_inline_script( 'typekit',   'try{Typekit.load({ async: false });}catch(e){}' );
     wp_enqueue_style( 'truther-login', get_theme_file_uri( '/assets/css/truther-login.css' ) );
 }
-add_action( 'login_enqueue_scripts', 'truther_twentyseventeen_login_stylesheet' );
+add_action( 'login_enqueue_scripts', 'pt_twentyseventeen_login_stylesheet' );
 
-function truther_twentyseventeen_scripts() {
+function pt_twentyseventeen_scripts() {
     wp_enqueue_script( 'truther-global',    get_theme_file_uri( '/assets/js/truther-global.js' ), array(), '1.0', true );
     wp_enqueue_script( 'truther-functions', get_theme_file_uri( '/assets/js/jquery.truther-functions.js' ), array(), '1.0', true );
 }
-add_action( 'wp_enqueue_scripts', 'truther_twentyseventeen_scripts' );
+add_action( 'wp_enqueue_scripts', 'pt_twentyseventeen_scripts' );
 
 function truther_related_posts_headline( $headline ) {
 $headline = sprintf(
@@ -99,7 +99,7 @@ update_option( 'large_size_h', 720 );
 update_option( 'large_crop', 1 );
 
 // Image insert list
-function truther_twentyseventeen_image_display_names( $editor_sizes ) {
+function pt_twentyseventeen_image_display_names( $editor_sizes ) {
     global $_wp_additional_image_sizes;
 
     $editor_sizes = array(
@@ -112,20 +112,20 @@ function truther_twentyseventeen_image_display_names( $editor_sizes ) {
 
     return $editor_sizes;
 }
-add_filter( 'image_size_names_choose', 'truther_twentyseventeen_image_display_names' );
+add_filter( 'image_size_names_choose', 'pt_twentyseventeen_image_display_names' );
 
 // Remove parent theme header
-function truther_twentyseventeen_custom_header_setup( $headers ) {
+function pt_twentyseventeen_custom_header_setup( $headers ) {
     unregister_default_headers( $headers );
 }
-add_action( 'after_setup_theme', 'truther_twentyseventeen_custom_header_setup', 999 );
+add_action( 'after_setup_theme', 'pt_twentyseventeen_custom_header_setup', 999 );
 
 
 /**
  * Change the default more link
  */
 
-function truther_twentyseventeen_excerpt_more( $link ) {
+function pt_twentyseventeen_excerpt_more( $link ) {
     remove_filter( 'excerpt_more', 'twentyseventeen_excerpt_more' );
 
     if ( is_admin() ) {
@@ -135,20 +135,20 @@ function truther_twentyseventeen_excerpt_more( $link ) {
     $link = sprintf( '<p class="link-more"><a href="%1$s" class="more-link">%2$s</a></p>',
         esc_url( get_permalink( get_the_ID() ) ),
         /* translators: %s: Name of current post */
-        sprintf( __( 'Read More<span class="screen-reader-text"> "%s"</span>', 'truther_twentyseventeen' ), get_the_title( get_the_ID() ) )
+        sprintf( __( 'Read More<span class="screen-reader-text"> "%s"</span>', 'pt_twentyseventeen' ), get_the_title( get_the_ID() ) )
     );
     return ' &hellip; ' . $link;
 }
-add_filter( 'excerpt_more', 'truther_twentyseventeen_excerpt_more', 999 );
+add_filter( 'excerpt_more', 'pt_twentyseventeen_excerpt_more', 999 );
 
 // Remove ellipse in excerpt
-function truther_twentyseventeen_replace_excerpt( $content ) {
+function pt_twentyseventeen_replace_excerpt( $content ) {
    return str_replace( '&hellip;',
         '',
         $content
    );
 }
-add_filter( 'the_excerpt', 'truther_twentyseventeen_replace_excerpt' );
+add_filter( 'the_excerpt', 'pt_twentyseventeen_replace_excerpt' );
 
 
 /*
@@ -176,7 +176,7 @@ require get_theme_file_path( '/inc/settings-styles.php' );
 
 
 // Remove "Protected:" & "Private:"
-function truther_twentyseventeen_title_trim( $title ) {
+function pt_twentyseventeen_title_trim( $title ) {
 
     $prepended_title = esc_attr( $title );
     $findthese = array(
@@ -191,7 +191,7 @@ function truther_twentyseventeen_title_trim( $title ) {
 
     return $title;
 }
-add_filter( 'the_title', 'truther_twentyseventeen_title_trim' );
+add_filter( 'the_title', 'pt_twentyseventeen_title_trim' );
 
 
 /*
