@@ -1,0 +1,14 @@
+/*
+ * Admin Bar
+ */
+
+#wpadminbar {
+	background: #1e2b37;
+}
+
+#wpadminbar #wp-admin-bar-my-account.with-avatar > .ab-empty-item img,
+#wpadminbar #wp-admin-bar-my-account.with-avatar > a img {
+	border: none;
+	border-radius: 50%;
+	background: transparent;
+}

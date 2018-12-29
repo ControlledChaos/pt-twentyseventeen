@@ -1,0 +1,140 @@
+.login {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	background-color: #2c3e50;
+}
+
+#login {
+	width: 100%;
+	max-width: 30em;
+	padding: 0;
+	margin: auto;
+}
+
+.login h1 {
+	text-align: left;
+	font-family: 'Adelle', 'Bitter', Georgia, Times, serif;
+	font-size: 3em;
+	font-weight: bold;
+	font-weight: bolder;
+	font-weight: 900;
+	text-transform: uppercase;
+	letter-spacing: normal;
+	line-height: 1;
+	text-shadow:
+		0.05em 0.05em 0.03em rgba(0,0,0,0.9),
+		0.02em 0.02em 0px #000,
+		0.02em -0.02em 0px #000,
+		-0.02em 0.02em 0px #000,
+		-0.02em -0.02em 0px #000;
+}
+
+.login h1:focus {
+	border: none;
+	outline: 0;
+}
+
+.login h1 a {
+	background: none;
+	color: #fff;
+	height: auto;
+	font-size: 1em;
+	font-weight: bold;
+	font-weight: bolder;
+	font-weight: 900;
+	line-height: 1;
+	margin: 0;
+	padding: 0;
+	width: auto;
+	text-indent: 0px;
+	outline: 0;
+	display: inline;
+}
+
+.login h1 a:hover,
+.login h1 a:active,
+.login h1 a:focus {
+	color: #fff;
+	border: none;
+	outline: 0;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+.login-message {
+	font-family: 'reklame-script', cursive;
+	font-size: 2.8em;
+	font-weight: bold;
+	font-weight: 500;
+	line-height: 1;
+	color: #f1c40f;
+	text-shadow:
+		0.02em 0.02em 0px #000,
+		0.02em -0.02em 0px #000,
+		-0.02em 0.02em 0px #000,
+		-0.02em -0.02em 0px #000;
+	transform: rotate(-5deg) skew(-6deg) translateY(-0.4em);
+	z-index: 10;
+	pointer-events: none;
+}
+
+.login form {
+	margin-top: 20px;
+	margin-left: 0;
+	padding: 2em;
+	background: rgba(0,0,0,0.3);
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+input[type="text"], input[type="search"], input[type="radio"], input[type="tel"], input[type="time"], input[type="url"], input[type="week"], input[type="password"], input[type="checkbox"], input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], select, textarea {
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	background-color: #fff;
+	color: #95a5a6;
+	border-color: #bdc3c7;
+	outline: 0;
+}
+
+.login label {
+	color: #fff;
+	font-size: 1rem;
+}
+
+.login form .forgetmenot label {
+	font-size: 0.8rem;
+	line-height: 1.2;
+}
+
+.login #login_error,
+.login .message {
+	border: solid 1px #fff;
+	border-radius: 3px;
+	padding: 1.2rem;
+	margin: 1em 0 0;
+	color: #fff;
+	font-size: 1rem;
+	background: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	text-align: center;
+}
+
+.login #login_error {
+	color: #f1c40f;
+	border-color: #f1c40f;
+}
+
+.login #login_error a {
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.login #login_error a,
+.login #login_error a:hover,
+.login #login_error a:active,
+.login #login_error a:focus {
+	color: #f1c40f;
+}
