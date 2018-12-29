@@ -150,24 +150,6 @@ function pt_twentyseventeen_replace_excerpt( $content ) {
 }
 add_filter( 'the_excerpt', 'pt_twentyseventeen_replace_excerpt' );
 
-
-/*
- * ACF Options Page
- */
-
-if ( function_exists( 'acf_add_options_page' ) ) {
-    acf_add_options_page( array(
-        'page_title' => 'Truther Theme Settings',
-        'menu_title' => 'Truther Theme',
-        'position'   => 3,
-        'icon_url'   => 'dashicons-admin-settings',
-        'menu_slug'  => 'theme-settings',
-        'capability' => 'edit_posts',
-        'redirect'   => false
-    ));
-}
-
-
 /**
  * Custom template tags for this theme.
  */
