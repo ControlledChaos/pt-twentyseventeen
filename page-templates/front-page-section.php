@@ -1,12 +1,13 @@
 <?php
 /**
  * @package WordPress
- * @subpackage Truther_Twenty_Seventeen
+ * @subpackage Truther_PT_Seventeen
  * @since 1.0
  * @version 1.0
- * 
- * Template Name: Front Section
- * 
+ *
+ * Template Name: Front Page Section
+ * Template Post Type: page
+ * Description: For pages used as a front page section.
  */
 
 get_header(); ?>
@@ -19,11 +20,6 @@ get_header(); ?>
 			while ( have_posts() ) : the_post();
 
 				get_template_part( 'template-parts/page/content', 'page' );
-
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
 
 			endwhile; // End of the loop.
 			?>

@@ -3,7 +3,7 @@
  * Template part for displaying pages on front page
  *
  * @package WordPress
- * @subpackage Twenty_Seventeen
+ * @subpackage PT_Seventeen
  * @since 1.0
  * @version 1.0
  */
@@ -19,7 +19,6 @@ global $twentyseventeencounter;
 
 		// Calculate aspect ratio: h / w * 100%.
 		$ratio = $thumbnail[2] / $thumbnail[1] * 100;
-		$thumbnail_text = get_field( 'truther_front_section_image_text' );
 		?>
 
 		<div class="panel-image" style="background-image: url(<?php echo esc_url( $thumbnail[0] ); ?>);">

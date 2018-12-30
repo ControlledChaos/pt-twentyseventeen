@@ -5,24 +5,34 @@
  * Eventually, some of the functionality here could be replaced by core features.
  *
  * @package WordPress
- * @subpackage Twenty_Seventeen
+ * @subpackage PT_Seventeen
  * @since 1.0
  */
 
 if ( ! function_exists( 'pt_twentyseventeen_intro_subheading' ) ) :
 /**
- * Prints HTML with meta information for the current post-date/time and author.
+ * Displays a random message at the top of the front page.
  */
 function pt_twentyseventeen_intro_subheading() {
 
-	// Random subheading array.
-	$subheadings = [
-		__( 'Question Everything, Especially Authority', 'pt-twentyseventeen' ),
-		__( 'Presume That It\'s Propaganda', 'pt-twentyseventeen' ),
-		__( 'Thinking Is Disbelieving', 'pt-twentyseventeen' ),
-		__( 'There Is Wisdom In Doubt', 'pt-twentyseventeen' ),
-		__( 'People Do Conspire', 'pt-twentyseventeen' )
-	];
+	// If ACF Pro is active.
+	if ( class_exists( 'acf_pro' ) ) {
+		$subheadings = [];
+		if ( have_rows( 'pt_front_page_messages' ) ):
+			while ( have_rows( 'pt_front_page_messages' ) ) : the_row();
+					$subheadings[] = get_sub_field( 'pt_front_page_message' );
+			endwhile;
+		endif;
+
+	// If no ACF.
+	} else {
+		// Random message array.
+		$subheadings = [
+			__( 'Presume That It\'s Propaganda', 'pt-twentyseventeen' ),
+			__( 'Thinking Is Disbelieving', 'pt-twentyseventeen' ),
+			__( 'People Do Conspire', 'pt-twentyseventeen' )
+		];
+	}
 
 	// Shuffle the order of the array.
 	$random = shuffle( $subheadings );
@@ -38,7 +48,7 @@ function pt_twentyseventeen_intro_subheading() {
 		$subheading = $subheadings[$random];
 	// Otherwise return our fallback subheading.
 	} else {
-		$subheading = __( 'Question Everything, Especially Authority', 'pt-twentyseventeen' );
+		$subheading = __( 'Thinking Is Disbelieving', 'pt-twentyseventeen' );
 	}
 
 	// Subheading output.
@@ -46,6 +56,16 @@ function pt_twentyseventeen_intro_subheading() {
 		'<h3 class="front-page-subtitle">%1s</h3>',
 		$subheading
 	);
+}
+endif;
+
+if ( ! function_exists( 'pt_twentyseventeen_user_info_front' ) ) :
+/**
+ * Prints HTML with user information on the front page
+ * for the current logged-in user.
+ */
+function pt_twentyseventeen_user_info_front() {
+	get_template_part( 'inc/partials/user-info-front' );
 }
 endif;
 
