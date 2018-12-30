@@ -11,8 +11,6 @@
  */
 
 ?>
-pt_twentyseventeen
-
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php
 		if ( is_sticky() && is_home() ) :
@@ -24,7 +22,7 @@ pt_twentyseventeen
 			if ( 'post' === get_post_type() ) :
 				echo '<div class="entry-meta">';
 					if ( is_single() ) :
-						truther_twentyseventeen_posted_on();
+						pt_twentyseventeen_posted_on();
 					else :
 						echo twentyseventeen_time_link();
 					endif;
@@ -43,7 +41,7 @@ pt_twentyseventeen
 		<div class="post-thumbnail">
 			<?php
 			if ( is_single() ) {
-				the_post_thumbnail( 'twentyseventeen-featured-image' ); 
+				the_post_thumbnail( 'twentyseventeen-featured-image' );
 			} else { ?>
 			<a href="<?php the_permalink(); ?>">
 				<?php the_post_thumbnail( 'twentyseventeen-featured-image' ); ?>
@@ -69,7 +67,7 @@ pt_twentyseventeen
 		?>
 	</div><!-- .entry-content -->
 
-	<p class="link-more"><a href="<?php the_permalink(); ?>" class="more-link">Read More</a></p>
+	<p class="link-more"><a href="<?php the_permalink(); ?>" class="more-link"><?php _e( 'Read More', 'pt-twentyseventeen' ); ?></a></p>
 
 	<?php if ( is_single() ) : ?>
 		<?php twentyseventeen_entry_footer(); ?>

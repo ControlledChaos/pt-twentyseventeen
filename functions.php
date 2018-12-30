@@ -221,5 +221,3 @@ function truther_login_message( $message ) {
     }
 }
 add_filter( 'login_message', 'truther_login_message' );
-
-?>

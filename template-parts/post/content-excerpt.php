@@ -26,15 +26,19 @@
 		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 	</header><!-- .entry-header -->
 
-	<?php if ( has_post_thumbnail()) : 
-	if ( is_home() ) {
-		$thumb_size  = 'twentyseventeen-featured-image';
-		$thumb_class = 'alignnone';
+	<?php if ( has_post_thumbnail()) {
+		if ( is_home() ) {
+			$thumb_size  = 'twentyseventeen-featured-image';
+			$thumb_class = 'alignnone';
+		} else {
+			$thumb_size  = 'twentyseventeen-featured-image';
+			$thumb_class = 'posts-panel-image';
+		}
+	// If no post thumbnail.
 	} else {
-		$thumb_size  = 'twentyseventeen-featured-image';
-		$thumb_class = 'posts-panel-image';
-	}
-	endif; ?>
+		$thumb_size  = null;
+		$thumb_class = '';
+	} ?>
 
 	<div class="entry-summary">
 		<a href="<?php the_permalink(); ?>" >

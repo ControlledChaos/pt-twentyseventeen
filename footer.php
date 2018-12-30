@@ -24,9 +24,7 @@
 			$bg_class = ' has-background';
 		} else {
 			$bg_class = ' no-background';
-		}
-pt-twentyseventeen
-		?>
+		} ?>
 
 		<footer id="colophon" class="site-footer<?php echo $bg_class; ?>" role="contentinfo">
 			<div class="wrap">
@@ -44,8 +42,6 @@ pt-twentyseventeen
 						?>
 					</nav><!-- .social-navigation -->
 				<?php endif;
-				global $current_user;
-				get_currentuserinfo();
 				get_template_part( 'template-parts/footer/site', 'info' );
 				?>
 			</div><!-- .wrap -->

@@ -24,7 +24,7 @@ global $twentyseventeencounter;
 
 		<div class="panel-image" style="background-image: url(<?php echo esc_url( $thumbnail[0] ); ?>);">
 			<header>
-				<h2><?php the_title(); ?></h2>'pt-twentyseventeen'
+				<h2><?php the_title(); ?></h2>
 			</header>
 			<div class="panel-image-prop" style="padding-top: <?php echo esc_attr( $ratio ); ?>%"></div>
 		</div><!-- .panel-image -->
@@ -80,7 +80,7 @@ global $twentyseventeencounter;
 						wp_reset_postdata();
 						?>
 						<hr />
-						<p><a class="posts-page-link" href="<?php echo get_permalink( get_option('page_for_posts' ) ); ?>">All Posts <?php echo twentyseventeen_get_svg( array( 'icon' => 'arrow-right' ) ); ?></a></p>
+						<p><a class="posts-page-link" href="<?php echo get_permalink( get_option('page_for_posts' ) ); ?>"><?php _e( 'All Posts', 'pt-twentyseventeen' ); ?> <?php echo twentyseventeen_get_svg( array( 'icon' => 'arrow-right' ) ); ?></a></p>
 					</div><!-- .recent-posts -->
 				<?php endif; ?>
 			<?php endif; ?>
