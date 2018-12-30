@@ -85,6 +85,15 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
 	border-bottom: solid 1px #bdc3c7;
 }
 
+.entry-header .entry-title.front-page-title {
+	margin: 0;
+	border: none;
+}
+
+h3.front-page-subtitle {
+	padding: 0;
+}
+
 h1,
 h2 {
 	font-weight: bold;

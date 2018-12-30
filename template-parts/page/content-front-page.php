@@ -30,7 +30,11 @@
 	<div class="panel-content">
 		<div class="wrap">
 			<header class="entry-header">
-				<?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>
+				<?php echo sprintf(
+					'<h2 class="entry-title front-page-title"><span class="screen-reader-text">%1s</span></h2>',
+					esc_html__( 'Questions for Everything, Confidence in Nothing', 'pt-twentyseventeen' )
+				); ?>
+				<?php pt_twentyseventeen_intro_subheading() ?>
 
 			</header><!-- .entry-header -->
 

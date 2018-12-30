@@ -9,6 +9,46 @@
  * @since 1.0
  */
 
+if ( ! function_exists( 'pt_twentyseventeen_intro_subheading' ) ) :
+/**
+ * Prints HTML with meta information for the current post-date/time and author.
+ */
+function pt_twentyseventeen_intro_subheading() {
+
+	// Random subheading array.
+	$subheadings = [
+		__( 'Question Everything, Especially Authority', 'pt-twentyseventeen' ),
+		__( 'Presume That It\'s Propaganda', 'pt-twentyseventeen' ),
+		__( 'Thinking Is Disbelieving', 'pt-twentyseventeen' ),
+		__( 'There Is Wisdom In Doubt', 'pt-twentyseventeen' ),
+		__( 'People Do Conspire', 'pt-twentyseventeen' )
+	];
+
+	// Shuffle the order of the array.
+	$random = shuffle( $subheadings );
+	// Count the number of keys in the array.
+	$count  = count( $subheadings );
+
+	// If there is only one key, return that key.
+	if ( is_array( $subheadings ) && ! empty( $random ) && 1 == $count ) {
+		$subheading = $subheadings[0];
+	// If there are more than one key, return a random key.
+	} elseif ( is_array( $subheadings ) && ! empty( $subheadings ) && ! empty( $random ) ) {
+		// Return the first value of the shuffled array.
+		$subheading = $subheadings[$random];
+	// Otherwise return our fallback subheading.
+	} else {
+		$subheading = __( 'Question Everything, Especially Authority', 'pt-twentyseventeen' );
+	}
+
+	// Subheading output.
+	echo sprintf(
+		'<h3 class="front-page-subtitle">%1s</h3>',
+		$subheading
+	);
+}
+endif;
+
 if ( ! function_exists( 'pt_twentyseventeen_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
