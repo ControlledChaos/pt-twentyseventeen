@@ -1,4 +1,57 @@
 <?php
+/**
+ * PT Twenty Seventeen functions and definitions
+ *
+ * @link https://developer.wordpress.org/themes/basics/theme-functions/
+ *
+ * @package WordPress
+ * @subpackage PT_Seventeen
+ * @since 1.0
+ * @version 1.0
+ */
+
+ // If this file is called directly, abort.
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
+
+/**
+ * Theme setup
+ */
+function pt_twentyseventeen_setup() {
+
+    /**
+     * Image stuff
+     */
+
+    // Add image sizes
+    add_image_size( 'sharing-image', 1200, 630, true );
+    add_image_size( 'large-thumb', 240, 240, true );
+    add_image_size( 'apple-touch-icon', 144, 144, true );
+    add_image_size( 'icon-57', 57, 57, true );
+    add_image_size( 'icon-60', 60, 60, true );
+    add_image_size( 'icon-72', 72, 72, true );
+    add_image_size( 'icon-76', 76, 76, true );
+    add_image_size( 'icon-114', 114, 114, true );
+    add_image_size( 'icon-120', 120, 120, true );
+    add_image_size( 'icon-144', 144, 144, true );
+    add_image_size( 'icon-152', 152, 152, true );
+    add_image_size( 'icon-180', 180, 180, true );
+    add_image_size( 'msapplication-square', 270, 270, true );
+
+    // Image crop settings
+    update_option( 'thumbnail_size_w', 160 );
+    update_option( 'thumbnail_size_h', 160 );
+    update_option( 'thumbnail_crop', 1 );
+    update_option( 'medium_size_w', 320 );
+    update_option( 'medium_size_h', 240 );
+    update_option( 'medium_crop', 1 );
+    update_option( 'large_size_w', 960 );
+    update_option( 'large_size_h', 720 );
+    update_option( 'large_crop', 1 );
+
+}
+add_action( 'after_setup_theme', 'pt_twentyseventeen_setup' );
 
 /**
  * ACF Options Page
@@ -82,37 +135,6 @@ function truther_excerpt_length( $length ) {
     return 65;
 }
 add_filter( 'excerpt_length', 'truther_excerpt_length', 999 );
-
-
-/**
- * Image stuff
- */
-
- // Add image sizes
-add_image_size( 'sharing-image', 1200, 630, true );
-add_image_size( 'large-thumb', 240, 240, true );
-add_image_size( 'apple-touch-icon', 144, 144, true );
-add_image_size( 'icon-57', 57, 57, true );
-add_image_size( 'icon-60', 60, 60, true );
-add_image_size( 'icon-72', 72, 72, true );
-add_image_size( 'icon-76', 76, 76, true );
-add_image_size( 'icon-114', 114, 114, true );
-add_image_size( 'icon-120', 120, 120, true );
-add_image_size( 'icon-144', 144, 144, true );
-add_image_size( 'icon-152', 152, 152, true );
-add_image_size( 'icon-180', 180, 180, true );
-add_image_size( 'msapplication-square', 270, 270, true );
-
-// Image crop settings
-update_option( 'thumbnail_size_w', 160 );
-update_option( 'thumbnail_size_h', 160 );
-update_option( 'thumbnail_crop', 1 );
-update_option( 'medium_size_w', 320 );
-update_option( 'medium_size_h', 240 );
-update_option( 'medium_crop', 1 );
-update_option( 'large_size_w', 960 );
-update_option( 'large_size_h', 720 );
-update_option( 'large_crop', 1 );
 
 // Image insert list
 function pt_twentyseventeen_image_display_names( $editor_sizes ) {
