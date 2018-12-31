@@ -32,7 +32,7 @@
 			<header class="entry-header">
 				<?php echo sprintf(
 					'<h2 class="entry-title front-page-title"><span class="screen-reader-text">%1s</span></h2>',
-					esc_html__( 'Question Everything, Especially Authority', 'pt-twentyseventeen' )
+					esc_html__( 'One Man\'s Blog About Propaganda and Liberty.', 'pt-twentyseventeen' )
 				); ?>
 				<?php pt_twentyseventeen_intro_subheading(); ?>
 
