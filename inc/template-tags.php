@@ -28,9 +28,10 @@ function pt_twentyseventeen_intro_subheading() {
 	} else {
 		// Random message array.
 		$subheadings = [
+			__( 'Question Everything, Especially Authority', 'pt-twentyseventeen' ),
 			__( 'Presume That It\'s Propaganda', 'pt-twentyseventeen' ),
 			__( 'Thinking Is Disbelieving', 'pt-twentyseventeen' ),
-			__( 'People Do Conspire', 'pt-twentyseventeen' )
+			__( 'Because People Conspire', 'pt-twentyseventeen' )
 		];
 	}
 
